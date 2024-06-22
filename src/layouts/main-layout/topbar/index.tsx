@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography';
 import IconifyIcon from 'components/base/IconifyIcon';
 import Image from 'components/base/Image';
 import LogoImg from 'assets/images/Logo.png';
-import LanguageSelect from './LanguageSelect';
+
 import ProfileMenu from './ProfileMenu';
 
 interface TopbarProps {
@@ -56,13 +56,11 @@ const Topbar = ({ isClosing, mobileOpen, setMobileOpen }: TopbarProps) => {
           fontFamily={fontFamily.workSans}
           display={{ xs: 'none', lg: 'block' }}
         >
-          Analytics
+          Analiz
         </Typography>
       </Stack>
 
       <Stack spacing={1} alignItems="center">
-        <LanguageSelect />
-
         <Tooltip title="Notifications">
           <IconButton size="large" sx={{ color: 'text.secondary' }}>
             <IconifyIcon icon="ion:notifications" />

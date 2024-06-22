@@ -4,7 +4,7 @@ import TopCard from './TopCard';
 const cardsData = [
   {
     id: 1,
-    title: 'Save Products',
+    title: 'Net yıllık Kar',
     value: '50.8K',
     rate: '28.4%',
     isUp: true,
@@ -12,7 +12,7 @@ const cardsData = [
   },
   {
     id: 2,
-    title: 'Stock Products',
+    title: 'Net aylık Kar',
     value: '23.6K',
     rate: '12.6%',
     isUp: false,
@@ -20,7 +20,7 @@ const cardsData = [
   },
   {
     id: 3,
-    title: 'Sale Products',
+    title: 'Net haftalık Kar',
     value: '756',
     rate: '3.1%',
     isUp: true,
@@ -28,7 +28,7 @@ const cardsData = [
   },
   {
     id: 4,
-    title: 'Average Revenue',
+    title: 'Net günlük Kar',
     value: '2.3K',
     rate: '11.3%',
     isUp: true,
