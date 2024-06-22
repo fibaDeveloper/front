@@ -27,30 +27,6 @@ const sitemap: MenuItem[] = [
     active: true,
   },
   {
-    id: 'features',
-    subheader: 'Features',
-    path: '#!',
-    icon: 'mingcute:star-fill',
-  },
-  {
-    id: 'users',
-    subheader: 'Users',
-    path: '#!',
-    icon: 'mingcute:user-2-fill',
-  },
-  {
-    id: 'pricing',
-    subheader: 'Pricing',
-    path: '#!',
-    icon: 'mingcute:currency-dollar-2-line',
-  },
-  {
-    id: 'integrations',
-    subheader: 'Integrations',
-    path: '#!',
-    icon: 'mingcute:plugin-2-fill',
-  },
-  {
     id: 'authentication',
     subheader: 'Authentication',
     icon: 'mingcute:safe-lock-fill',
@@ -66,19 +42,6 @@ const sitemap: MenuItem[] = [
         path: paths.signup,
       },
     ],
-  },
-  {
-    id: 'settings',
-    subheader: 'Settings',
-    path: '#!',
-    icon: 'material-symbols:settings-rounded',
-    active: true,
-  },
-  {
-    id: 'template-pages',
-    subheader: 'Template pages',
-    path: '#!',
-    icon: 'mingcute:document-2-fill',
   },
   {
     id: 'account-settings',
