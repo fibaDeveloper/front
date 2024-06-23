@@ -1,5 +1,5 @@
-import { fontFamily } from 'theme/typography';
 import { useState, ChangeEvent } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
@@ -13,9 +13,14 @@ import OrdersStatusTable from './OrdersStatusTable';
 
 const OrdersStatus = () => {
   const [searchText, setSearchText] = useState('');
+  const navigate = useNavigate();
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchText(e.target.value);
+  };
+
+  const handleOptionOperation = () => {
+    navigate('/dashboard/options');
   };
 
   return (
@@ -33,7 +38,7 @@ const OrdersStatus = () => {
           justifyContent="space-between"
           flexGrow={1}
         >
-          <Typography variant="h6" fontWeight={400} fontFamily={fontFamily.workSans}>
+          <Typography variant="h6" fontWeight={400}>
             Orders Status
           </Typography>
           <TextField
@@ -58,7 +63,7 @@ const OrdersStatus = () => {
           alignItems={{ xs: 'flex-end', sm: 'center' }}
         >
           <DateSelect />
-          <Button variant="contained" size="small">
+          <Button variant="contained" size="small" onClick={handleOptionOperation}>
             Opsiyon İşlemi Yap
           </Button>
         </Stack>
