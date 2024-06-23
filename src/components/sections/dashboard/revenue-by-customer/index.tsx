@@ -10,18 +10,31 @@ import RevenueChartLegends from './RevenueChartLegends';
 import RevenueChart from './RevenueChart';
 
 export const revenueData = {
-  categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+  categories: [
+    'Oca',
+    'Şub',
+    'Mar',
+    'Nis',
+    'May',
+    'Haz',
+    'Tem',
+    'Ağu',
+    'Eyl',
+    'Eki',
+    'Kas',
+    'Ara',
+  ],
   series: [
     {
-      name: 'Current clients',
+      name: 'Product A',
       data: [14000, 30000, 38000, 36000, 16000, 24000, 10000, 44000, 12000, 6000, 12000, 24000],
     },
     {
-      name: 'Subscribers',
+      name: 'Product B',
       data: [12000, 20000, 26000, 12000, 10000, 32000, 6000, 8000, 12000, 18000, 16000, 6000],
     },
     {
-      name: 'New customers',
+      name: 'Product C',
       data: [12000, 26000, 24000, 24000, 8000, 14000, 0, 38000, 14000, 30000, 16000, 28000],
     },
   ],
@@ -34,7 +47,7 @@ const RevenueByCustomer = () => {
     <Paper sx={{ height: { xs: 540, md: 500 } }}>
       {/* header */}
       <Typography variant="subtitle1" color="text.secondary">
-        Revenue by customer type
+        Aylara Göre Karlı Ticaretler 
       </Typography>
 
       {/* subheader */}

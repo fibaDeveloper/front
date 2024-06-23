@@ -17,7 +17,7 @@ const WebsiteVisitors = () => {
       {/* header */}
       <Stack alignItems="center" justifyContent="space-between" mb={-2}>
         <Typography variant="h6" fontWeight={400} fontFamily={fontFamily.workSans}>
-          Website Visitors
+          Karlı Ticaretler 
         </Typography>
         <Button
           variant="contained"

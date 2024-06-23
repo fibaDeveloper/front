@@ -11,17 +11,17 @@ interface LegendsProps {
 export const legendsData = [
   {
     id: 1,
-    type: 'Organic',
+    type: 'Product A',
     rate: '80%',
   },
   {
     id: 2,
-    type: 'Social',
+    type: 'Product B',
     rate: '60%',
   },
   {
     id: 3,
-    type: 'Direct',
+    type: 'Product C',
     rate: '50%',
   },
 ];
@@ -45,21 +45,21 @@ const VisitorsChartLegends = ({ chartRef }: LegendsProps) => {
   }, []);
 
   const getActiveColor = (type: string) => {
-    if (type === 'Organic') {
-      return theme.palette.primary.main;
-    } else if (type === 'Social') {
-      return theme.palette.secondary.lighter;
-    } else if (type === 'Direct') {
-      return theme.palette.secondary.main;
+    if (type === 'Product A') {
+      return theme.palette.primary.dark;
+    } else if (type === 'Product B') {
+      return theme.palette.secondary.darker;
+    } else if (type === 'Product C') {
+      return theme.palette.secondary.dark;
     }
   };
 
   const getDisableColor = (type: string) => {
-    if (type === 'Organic') {
+    if (type === 'Product A') {
       return theme.palette.primary.dark;
-    } else if (type === 'Social') {
+    } else if (type === 'Product B') {
       return theme.palette.secondary.darker;
-    } else if (type === 'Direct') {
+    } else if (type === 'Product C') {
       return theme.palette.secondary.dark;
     }
   };
@@ -71,11 +71,11 @@ const VisitorsChartLegends = ({ chartRef }: LegendsProps) => {
 
     const option = echartsInstance.getOption() as echarts.EChartsOption;
 
-    if (type === 'Organic') {
+    if (type === 'Product A') {
       setToggleColor({ organic: true, social: false, direct: false });
-    } else if (type === 'Social') {
+    } else if (type === 'Product B') {
       setToggleColor({ organic: false, social: true, direct: false });
-    } else if (type === 'Direct') {
+    } else if (type === 'Product C') {
       setToggleColor({ organic: false, social: false, direct: true });
     } else {
       setToggleColor({ organic: true, social: true, direct: true });
@@ -109,7 +109,7 @@ const VisitorsChartLegends = ({ chartRef }: LegendsProps) => {
         <VisitorsChartLegend
           key={item.id}
           data={item}
-          toggleColor={toggleColor}
+          toggleColor={toggleColor} // Ensure toggleColor matches the expected keys
           handleToggleLegend={handleToggleLegend}
         />
       ))}

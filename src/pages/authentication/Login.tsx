@@ -1,4 +1,5 @@
 import { useState, ChangeEvent, FormEvent } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Divider from '@mui/material/Divider';
@@ -13,20 +14,50 @@ import IconifyIcon from 'components/base/IconifyIcon';
 import paths from 'routes/paths';
 
 interface User {
-  [key: string]: string;
+  email: string;
+  password: string;
 }
 
 const Login = () => {
   const [user, setUser] = useState<User>({ email: '', password: '' });
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
+  const [error, setError] = useState<string | null>(null);
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(user);
+    try {
+      const response = await fetch('http://localhost:5000/api/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(user),
+      });
+
+      if (!response.ok) {
+        throw new Error('Login failed');
+      }
+
+      const data = await response.json();
+      console.log(data);
+
+      // Token'ı sakla (örneğin, localStorage'da)
+      localStorage.setItem('token', data.token);
+
+      // Dashboard sayfasına yönlendir
+      navigate('/dashboard');
+    } catch (error) {
+      if (error instanceof Error) {
+        setError(error.message);
+      } else {
+        setError('An unknown error occurred');
+      }
+    }
   };
 
   return (
@@ -77,7 +108,6 @@ const Login = () => {
           placeholder="Your Password"
           autoComplete="current-password"
           fullWidth
-          autoFocus
           required
           InputProps={{
             endAdornment: (
@@ -93,6 +123,11 @@ const Login = () => {
             ),
           }}
         />
+        {error && (
+          <Typography color="error" variant="body2">
+            {error}
+          </Typography>
+        )}
         <Stack mt={-1.5} alignItems="center" justifyContent="space-between">
           <FormControlLabel
             control={<Checkbox id="checkbox" name="checkbox" color="primary" />}

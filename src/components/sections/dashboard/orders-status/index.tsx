@@ -59,7 +59,7 @@ const OrdersStatus = () => {
         >
           <DateSelect />
           <Button variant="contained" size="small">
-            Create order
+            Opsiyon İşlemi Yap
           </Button>
         </Stack>
       </Stack>

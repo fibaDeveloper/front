@@ -12,15 +12,15 @@ interface LegendsProps {
 const legendsData = [
   {
     id: 1,
-    type: 'Current clients',
+    type: 'Product A',
   },
   {
     id: 2,
-    type: 'Subscribers',
+    type: 'Product B',
   },
   {
     id: 3,
-    type: 'New customers',
+    type: 'Product C',
   },
 ];
 
@@ -35,11 +35,11 @@ const RevenueChartLegends = ({ chartRef, sm }: LegendsProps) => {
     const echartsInstance = chartRef.current?.getEchartsInstance();
     if (!echartsInstance) return;
 
-    if (seriesName === 'Current clients') {
+    if (seriesName === 'Product A') {
       setToggleColor({ ...toggleColor, currentClients: !toggleColor.currentClients });
-    } else if (seriesName === 'Subscribers') {
+    } else if (seriesName === 'Product B') {
       setToggleColor({ ...toggleColor, subscribers: !toggleColor.subscribers });
-    } else if (seriesName === 'New customers') {
+    } else if (seriesName === 'Product C') {
       setToggleColor({ ...toggleColor, newCustomers: !toggleColor.newCustomers });
     }
 

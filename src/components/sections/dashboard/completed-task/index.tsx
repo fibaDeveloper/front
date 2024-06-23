@@ -14,14 +14,14 @@ const CompletedTask = () => {
       <Stack alignItems="center" spacing={0.6}>
         <IconifyIcon icon="ph:clock-fill" color="text.secondary" fontSize="h6.fontSize" />
         <Typography variant="body2" color="text.secondary">
-          Completed tasks over time
+          Toplam Ticaret Sayısı
         </Typography>
       </Stack>
 
       <Stack mt={1.5} alignItems="center" justifyContent="space-between">
         <Stack alignItems="center" gap={0.875}>
           <Typography variant="h3" fontWeight={600} letterSpacing={1}>
-            257
+            24
           </Typography>
           <RateChip rate={'16.8%'} isUp={true} />
         </Stack>

@@ -1,6 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 import { Suspense, lazy } from 'react';
-import { Outlet, createBrowserRouter } from 'react-router-dom';
+import { Outlet, createBrowserRouter, Navigate } from 'react-router-dom';
 import paths, { rootPaths } from './paths';
 import MainLayout from 'layouts/main-layout';
 import AuthLayout from 'layouts/auth-layout';
@@ -11,6 +11,7 @@ const App = lazy(() => import('App'));
 const Dashboard = lazy(() => import('pages/dashboard'));
 const Login = lazy(() => import('pages/authentication/Login'));
 const Signup = lazy(() => import('pages/authentication/Signup'));
+const OptionManagement = lazy(() => import('pages/options/OptionManagement'));
 
 const router = createBrowserRouter(
   [
@@ -23,19 +24,7 @@ const router = createBrowserRouter(
       children: [
         {
           path: '/',
-          element: (
-            <MainLayout>
-              <Suspense fallback={<PageLoader />}>
-                <Outlet />
-              </Suspense>
-            </MainLayout>
-          ),
-          children: [
-            {
-              index: true,
-              element: <Dashboard />,
-            },
-          ],
+          element: <Navigate to={paths.login} />,
         },
         {
           path: rootPaths.authRoot,
@@ -52,6 +41,26 @@ const router = createBrowserRouter(
             {
               path: paths.signup,
               element: <Signup />,
+            },
+          ],
+        },
+        {
+          path: '/dashboard',
+          element: (
+            <MainLayout>
+              <Suspense fallback={<PageLoader />}>
+                <Outlet />
+              </Suspense>
+            </MainLayout>
+          ),
+          children: [
+            {
+              index: true,
+              element: <Dashboard />,
+            },
+            {
+              path: 'options',
+              element: <OptionManagement />,
             },
           ],
         },
