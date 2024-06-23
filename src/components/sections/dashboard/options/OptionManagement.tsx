@@ -1,9 +1,9 @@
-import { useState, useEffect, useMemo } from 'react';
-
+import  { useState, useEffect, useMemo } from 'react';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
+import TopCard from './TopCard'; // TopCard bileşenini doğru şekilde import ediyoruz
 
 interface Option {
   _id: string;
@@ -69,11 +69,19 @@ const OptionManagement = () => {
           columns={columns}
           pagination
           pageSizeOptions={[5]}
-         
           disableColumnFilter
           disableColumnMenu
         />
       </Box>
+
+      {/* TopCard bileşenini çağırıyoruz */}
+      <TopCard
+        icon="carbon:favorite-filled"
+        title="Sample Title"
+        value="Sample Value"
+        rate="Sample Rate"
+        isUp={true}
+      />
     </Paper>
   );
 };

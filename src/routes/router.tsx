@@ -11,7 +11,7 @@ const App = lazy(() => import('App'));
 const Dashboard = lazy(() => import('pages/dashboard'));
 const Login = lazy(() => import('pages/authentication/Login'));
 const Signup = lazy(() => import('pages/authentication/Signup'));
-const OptionManagement = lazy(() => import('pages/options/OptionManagement'));
+const OptionManagement = lazy(() => import('components/sections/dashboard/options/OptionManagement'));
 
 const router = createBrowserRouter(
   [
