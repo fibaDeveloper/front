@@ -95,7 +95,7 @@ const OrdersStatusTable = ({ searchText }: OrdersStatusTableProps) => {
         <Stack alignItems="center" gap={0.75}>
           <IconifyIcon icon="mingcute:user-2-fill" color="neutral.main" fontSize="body2.fontSize" />
           <Typography variant="caption" mt={0.25} letterSpacing={0.5}>
-            Client
+            Product
           </Typography>
         </Stack>
       ),
@@ -178,27 +178,7 @@ const OrdersStatusTable = ({ searchText }: OrdersStatusTableProps) => {
       },
       editable: true,
     },
-    {
-      field: 'country',
-      headerName: 'Country',
-      sortable: false,
-      flex: 1,
-      minWidth: 120,
-      resizable: false,
-      editable: true,
-      renderHeader: () => (
-        <Stack alignItems="center" gap={0.75}>
-          <IconifyIcon
-            icon="healthicons:geo-location"
-            color="neutral.main"
-            fontSize="h5.fontSize"
-          />
-          <Typography mt={0.175} variant="caption" letterSpacing={0.5}>
-            Country
-          </Typography>
-        </Stack>
-      ),
-    },
+
     {
       field: 'total',
       headerName: 'Total',
@@ -292,7 +272,7 @@ const OrdersStatusTable = ({ searchText }: OrdersStatusTableProps) => {
             pageSize: 6,
           },
         },
-      }}
+      }}      
       checkboxSelection
       pageSizeOptions={[6]}
       disableColumnMenu

@@ -39,7 +39,7 @@ const OrdersStatus = () => {
           flexGrow={1}
         >
           <Typography variant="h6" fontWeight={400}>
-            Orders Status
+            Opsiyonlar
           </Typography>
           <TextField
             variant="filled"
